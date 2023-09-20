@@ -52,35 +52,41 @@ export const MovieDetails = () => {
 
   return (
     <>
-      <div>
-        <Link to={backLinkHref}>Go Back</Link>
-        {errorStatus === 404 ? (
-          <p className="pt-4">Details not found</p>
-        ) : (
-          <div>
+      {/* <div> */}
+      <Link to={backLinkHref}>Go Back</Link>
+      {errorStatus === 404 ? (
+        <p>Details not found</p>
+      ) : (
+        <>
+          <div style={{ display: 'flex', gap: '40px' }}>
             <div>
               {!movie.poster_path ? (
-                <div className="w-[300px] h-[400px] text-center">No Image</div>
+                <div>No Image</div>
               ) : (
                 <img
-                  className="w-[300px] h-[400px]"
+                  style={{ width: '300px' }}
                   src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                   alt=""
                 />
               )}
             </div>
 
-            <p>{movie.title}</p>
-            <p>{movie.release_date}</p>
-            <p>User Score: {movie.vote_average}</p>
-            <p>Overview: {movie.overview}</p>
-            <ul className="flex gap-5">
-              Genres
-              {movie.genres &&
-                movie.genres.map(genre => {
-                  return <li key={genre.id}>{genre.name}</li>;
-                })}
-            </ul>
+            <div style={{ flexDirection: 'column' }}>
+              <p>{movie.title}</p>
+              <p>{movie.release_date}</p>
+              <p>User Score: {movie.vote_average}</p>
+              <p>Overview: {movie.overview}</p>
+              <ul className="flex gap-5">
+                Genres:
+                {movie.genres &&
+                  movie.genres.map(genre => {
+                    return <li key={genre.id}>{genre.name}</li>;
+                  })}
+              </ul>
+            </div>
+          </div>
+
+          <div>
             <ul>
               <li>
                 <Link to="cast">See cast</Link>
@@ -93,8 +99,10 @@ export const MovieDetails = () => {
               <Outlet />
             </div>
           </div>
-        )}
-      </div>
+          {/* </div> */}
+        </>
+      )}
+      {/* </div> */}
     </>
   );
 };
