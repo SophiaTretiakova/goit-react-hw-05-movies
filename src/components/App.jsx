@@ -25,7 +25,7 @@
 //   );
 // };
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Movies } from 'pages/Movies';
+import { SearchMovies } from 'pages/SearchMovies';
 import { Home } from 'pages/Home';
 import { Reviews } from './Reviews/Reviews';
 import { Layout } from 'Layout/Layout';
@@ -39,7 +39,7 @@ export const App = () => {
         {/* <Route path="/" element={<Home />} end> */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="movies" element={<Movies />} />
+          <Route path="movies" element={<SearchMovies />} />
           <Route path="movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />

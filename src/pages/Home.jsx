@@ -18,7 +18,6 @@ export const Home = () => {
   }, []);
 
   useEffect(() => {
-    // const controller = new AbortController();
     async function fetchMovies() {
       try {
         const { results } = await fetchPopularMovies();
@@ -32,8 +31,11 @@ export const Home = () => {
 
   return (
     <>
-      <h1>Trending today</h1>;
-      <MoviesList popularMovies={popularMovies}></MoviesList>;
+      <h1>Trending today</h1>
+      <MoviesList
+        popularMovies={popularMovies}
+        style={{ display: 'flex' }}
+      ></MoviesList>
     </>
   );
 };

@@ -28,7 +28,7 @@ export const fetchCast = async movieId => {
 
 export const fetchReviews = async movieId => {
   const response = await axios.get(
-    `/movie/${movieId}/reviews?api_key=${API_KEY}`
+    `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
   );
   return response.data;
 };
