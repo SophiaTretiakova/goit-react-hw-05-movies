@@ -10,9 +10,10 @@ export const GlobalStyles = createGlobalStyle`html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   color: #212121;
-  background-color: #fff;
+  background-color: lightskyblue;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;}
+
 *,
 *::before,
 *::after {
@@ -24,10 +25,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   color: #212121;
-  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 10px 50px;
+   background-color: lightskyblue;
+
+}
+
+a {
+  text-decoration: none;
+  color: black
 }
 
 img {
