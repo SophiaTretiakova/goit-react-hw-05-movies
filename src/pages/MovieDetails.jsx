@@ -61,12 +61,18 @@ const MovieDetails = () => {
             </div>
 
             <div style={{ flexDirection: 'column' }}>
-              <p>{movie.title}</p>
+              <p>
+                <b>{movie.title}</b>
+              </p>
               <p>{movie.release_date}</p>
-              <p>User Score: {movie.vote_average}</p>
-              <p>Overview: {movie.overview}</p>
+              <p>
+                <b>User Score:</b> {movie.vote_average}
+              </p>
+              <p>
+                <b>Overview:</b> {movie.overview}
+              </p>
               <ul className="flex gap-5">
-                Genres:
+                <b> Genres:</b>
                 {movie.genres &&
                   movie.genres.map(genre => {
                     return <li key={genre.id}>{genre.name}</li>;
