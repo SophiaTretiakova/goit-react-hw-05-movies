@@ -23,7 +23,7 @@ const SearchMovies = () => {
         if (query !== '') {
           const results = await fetchMoviesByQuery(query);
           setMovies(results);
-          setError(false); // Reset error state when there are results
+          setError(false);
         }
       } catch (error) {
         console.log('Error:', error);

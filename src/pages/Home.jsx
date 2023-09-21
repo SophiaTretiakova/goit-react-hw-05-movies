@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Trending today</h1>
+      <h1>Popular today</h1>
       <MoviesList
         popularMovies={popularMovies}
         style={{ display: 'flex' }}

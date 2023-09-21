@@ -1,8 +1,9 @@
 import { HomeMovie } from './HomeMovie';
+import { StyledMoviesList } from './MoviesList.styled';
 
 export const MoviesList = ({ popularMovies }) => {
   return (
-    <ul>
+    <StyledMoviesList>
       {popularMovies?.map(movie => (
         <HomeMovie
           key={movie.id}
@@ -10,6 +11,6 @@ export const MoviesList = ({ popularMovies }) => {
           title={movie.title || 'not found'}
         />
       ))}
-    </ul>
+    </StyledMoviesList>
   );
 };

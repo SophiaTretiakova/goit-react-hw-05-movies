@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Reviews } from './Reviews/Reviews';
 import { Cast } from './Cast/Cast';
+import { GlobalStyles } from './GlobalStyles.styled';
 import Layout from 'Layout/Layout';
 const Home = lazy(() => import('../pages/Home'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails'));
@@ -9,18 +10,21 @@ const SearchMovies = lazy(() => import('../pages/SearchMovies'));
 
 export const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="movies" element={<SearchMovies />} />
-          <Route path="movies/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="movies" element={<SearchMovies />} />
+            <Route path="movies/:movieId" element={<MovieDetails />}>
+              <Route path="cast" element={<Cast />} />
+              <Route path="reviews" element={<Reviews />} />
+            </Route>
           </Route>
-        </Route>
-        <Route path="*" element={<Home />} />
-      </Routes>
-    </Router>
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Router>
+      <GlobalStyles />
+    </>
   );
 };

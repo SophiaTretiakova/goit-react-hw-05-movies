@@ -2,7 +2,22 @@ import { fetchMovieById } from 'api';
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+  color: black;
+
+  &.active {
+    color: darkviolet;
+  }
+`;
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
@@ -23,12 +38,10 @@ const MovieDetails = () => {
     }
 
     fetchMovie();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [movieId]);
 
   return (
     <>
-      {/* <div> */}
       <Link to={backLinkHref}>Go Back</Link>
       {errorStatus === 404 ? (
         <p>Details not found</p>
@@ -63,22 +76,20 @@ const MovieDetails = () => {
           </div>
 
           <div>
-            <ul>
+            <ul style={{ listStyle: 'none' }}>
               <li>
-                <Link to="cast">See cast</Link>
+                <StyledLink to="cast">See cast</StyledLink>
               </li>
               <li>
-                <Link to="reviews">See reviews</Link>
+                <StyledLink to="reviews">See reviews</StyledLink>
               </li>
             </ul>
             <div>
               <Outlet />
             </div>
           </div>
-          {/* </div> */}
         </>
       )}
-      {/* </div> */}
     </>
   );
 };
