@@ -1,5 +1,4 @@
 import { Link, Outlet } from 'react-router-dom';
-// Outlet
 export const HomeMovie = ({ movie: { id, title, poster_path } }) => {
   return (
     <li style={{ display: 'flex', flexDirection: 'column' }}>
@@ -13,7 +12,7 @@ export const HomeMovie = ({ movie: { id, title, poster_path } }) => {
         }
         alt={title}
       />
-      <Link to={`movies/${id}`}>{title || 'Not found'}</Link>
+      <Link to={`/movies/${id}`}>{title || 'Not found'}</Link>
       <Outlet />
     </li>
   );

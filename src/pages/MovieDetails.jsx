@@ -1,34 +1,10 @@
-// import { Cast } from 'components/Cast/Cast';
-// import { Reviews } from 'components/Reviews/Reviews';
-// import { Link } from 'react-router-dom';
-
-// export const MovieDetails = () => {
-//   return (
-//     <>
-//       <div
-//       // style={{
-//       //   display: 'flex',
-//       //   flexDirection: 'column',
-//       //   gap: '10px',
-//       //   marginBottom: '15px',
-//       // }}
-//       >
-//         <h6>Additional information</h6>
-//         <Link to="cast">Cast</Link>
-//         <Link to="reviews">Reviews</Link>
-//       </div>
-//     </>
-//   );
-// };
-
 import { fetchMovieById } from 'api';
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-// import { Container } from '../components/Container';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const [errorStatus, setErrorStatus] = useState(200);
   const { movieId } = useParams();
@@ -106,3 +82,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
-export const SearchMovies = () => {
+const SearchMovies = () => {
   const [searchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const [query, setQuery] = useState('');
@@ -51,7 +51,7 @@ export const SearchMovies = () => {
       {error ? null : (
         <>
           {movies.length > 0 ? (
-            <MoviesList popularMovies={movies} />
+            <MoviesList popularMovies={movies} navigate={navigate} />
           ) : (
             <p>No results</p>
           )}
@@ -60,3 +60,5 @@ export const SearchMovies = () => {
     </>
   );
 };
+
+export default SearchMovies;

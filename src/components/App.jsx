@@ -1,16 +1,16 @@
+import { lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { SearchMovies } from 'pages/SearchMovies';
-import { Home } from 'pages/Home';
 import { Reviews } from './Reviews/Reviews';
-import { Layout } from 'Layout/Layout';
-import { MovieDetails } from 'pages/MovieDetails';
 import { Cast } from './Cast/Cast';
+import Layout from 'Layout/Layout';
+const Home = lazy(() => import('../pages/Home'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails'));
+const SearchMovies = lazy(() => import('../pages/SearchMovies'));
 
 export const App = () => {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Home />} end> */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="movies" element={<SearchMovies />} />
@@ -21,7 +21,6 @@ export const App = () => {
         </Route>
         <Route path="*" element={<Home />} />
       </Routes>
-      {/* <Outlet /> */}
     </Router>
   );
 };

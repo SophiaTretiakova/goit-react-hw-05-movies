@@ -2,7 +2,7 @@ import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useState, useEffect } from 'react';
 import { fetchPopularMovies } from 'api';
 
-export const Home = () => {
+const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
@@ -39,3 +39,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;
