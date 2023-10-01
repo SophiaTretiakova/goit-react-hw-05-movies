@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { StyledHeader } from './Header.styled';
 
 const StyledLink = styled(NavLink)`
   color: black;
@@ -13,9 +14,9 @@ const StyledLink = styled(NavLink)`
 
 export const Header = () => {
   return (
-    <div style={{ display: 'flex', gap: '30px', padding: '20px 0px' }}>
+    <StyledHeader>
       <StyledLink to="/">Home</StyledLink>
       <StyledLink to="/movies">Search movies</StyledLink>
-    </div>
+    </StyledHeader>
   );
 };

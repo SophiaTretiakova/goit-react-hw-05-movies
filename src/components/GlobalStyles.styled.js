@@ -27,9 +27,12 @@ body {
   color: #212121;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 10px 50px;
+  padding: 30px 50px;
    background-color: lightskyblue;
 
+}
+h1{
+  margin: 0px;
 }
 
 a {
@@ -38,8 +41,12 @@ a {
 }
 
 img {
-  display: block;
+  /* display: block;
   width: 200px;
   max-width: 100%;
   height: auto;
-}`;
+
+  border-radius: 5px; */
+/* background: linear-gradient(180deg, rgba(29, 29, 29, 0.00) 15.78%, rgba(29, 29, 29, 0.78) 100%); */
+}
+`;

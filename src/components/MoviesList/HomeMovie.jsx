@@ -1,7 +1,9 @@
 import { Link, Outlet } from 'react-router-dom';
+import { StyledMovieLi, Overlay, StyledMovieImg } from './HomeMovie.styled';
+
 export const HomeMovie = ({ movie: { id, title, poster_path }, location }) => {
   return (
-    <li style={{ display: 'flex', flexDirection: 'column' }}>
+    <StyledMovieLi>
       <Link
         state={{ from: location }}
         to={`/movies/${id}`}
@@ -14,7 +16,7 @@ export const HomeMovie = ({ movie: { id, title, poster_path }, location }) => {
           overflow: ' hidden',
         }}
       >
-        <img
+        <StyledMovieImg
           loading="lazy"
           src={
             `https://image.tmdb.org/t/p/w300/${poster_path}` ||
@@ -22,9 +24,22 @@ export const HomeMovie = ({ movie: { id, title, poster_path }, location }) => {
           }
           alt={title}
         />
-        {title || 'Not found'}
+        <Overlay>
+          <p
+            style={{
+              position: 'absolute',
+              color: 'white',
+              zIndex: '2',
+              top: '85%',
+              left: '5%',
+            }}
+          >
+            {' '}
+            {title || 'Not found'}
+          </p>
+        </Overlay>
       </Link>
       <Outlet />
-    </li>
+    </StyledMovieLi>
   );
 };

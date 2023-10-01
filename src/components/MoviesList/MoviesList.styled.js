@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 export const StyledMoviesList = styled.ul`
   display: flex;
-  margin: 0px auto;
+  margin: 0px 0px;
   padding: 20px 0px;
   justify-content: center;
   align-items: center;
