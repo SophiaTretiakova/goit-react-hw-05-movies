@@ -30,7 +30,7 @@ export const HomeMovie = ({ movie: { id, title, poster_path }, location }) => {
               position: 'absolute',
               color: 'white',
               zIndex: '2',
-              top: '85%',
+              top: '80%',
               left: '5%',
             }}
           >

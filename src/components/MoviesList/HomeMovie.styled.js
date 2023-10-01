@@ -17,7 +17,7 @@ export const Overlay = styled.div`
   background: linear-gradient(
     0deg,
     rgba(29, 29, 29, 1) 0%,
-    rgba(255, 0, 96, 0.017) 15%
+    rgba(255, 0, 96, 0.017) 20%
   );
 `;
 
